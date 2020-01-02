@@ -39,10 +39,10 @@ func Module(path string, version string, outputDirectory string) error {
 func getModuleName(path string) (string, error) {
 	moduleFilePath := filepath.Join(path, "go.mod")
 	file, err := os.Open(moduleFilePath)
+	defer file.Close()
 	if err != nil {
 		return "", fmt.Errorf("unable to open module file: %w", err)
 	}
-	defer file.Close()
 
 	moduleFileScanner := bufio.NewScanner(file)
 	moduleFileScanner.Scan()
@@ -61,12 +61,12 @@ func createZipArchive(path string, moduleName string, version string, outputDire
 		return fmt.Errorf("unable to get files to archive: %w", err)
 	}
 
-	outputPath := filepath.Join(outputDirectory, version+".zip")
+	outputPath := filepath.Join(outputDirectory, "source.zip")
 	zipFile, err := os.Create(outputPath)
+	defer zipFile.Close()
 	if err != nil {
 		return fmt.Errorf("unable to create zip file: %w", err)
 	}
-	defer zipFile.Close()
 
 	zipWriter := zip.NewWriter(zipFile)
 	defer zipWriter.Close()

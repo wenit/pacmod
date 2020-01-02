@@ -6,8 +6,8 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/plexsystems/pacmod/pack"
 	"github.com/spf13/cobra"
+	"github.com/wenit/pacmod/pack"
 )
 
 // NewPackCommand creates a new pack command which allows

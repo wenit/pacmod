@@ -1,4 +1,4 @@
-module github.com/plexsystems/pacmod
+module github.com/wenit/pacmod
 
 go 1.13
 

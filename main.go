@@ -1,9 +1,8 @@
 package main
 
 import (
+	"github.com/wenit/pacmod/internal/commands"
 	"os"
-
-	"github.com/plexsystems/pacmod/internal/commands"
 )
 
 func main() {
