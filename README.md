@@ -21,4 +21,4 @@ This will result in the following files being placed in the `outputdirectory`:
 
 - `go.mod` - The current mod file when the `pack` command was executed
 - `v1.0.0.info` - The info file containing the module version and timestamp
-- `v1.0.0.zip` - An archive containing the Go module
+- `source.zip` - An archive containing the Go module
